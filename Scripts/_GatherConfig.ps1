@@ -1,0 +1,1 @@
+return Get-Content $PSScriptRoot\..\JINX.json | ConvertFrom-JSON

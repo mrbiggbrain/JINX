@@ -1,0 +1,32 @@
+{
+    "Partition": {
+        "Disk":2,
+        "PartType":"UEFI",
+        "DriveLetters":{
+            "OS":"X",
+            "System":"S",
+            "Recovery":"R"
+        }
+    },
+    "Install": {
+        "Image": "W10\\Install.esd",
+        "Index":6
+    },
+    "Repo": {
+        "Path":"D:\\JINXREPO",
+        "Folders": {
+            "Images":"Images",
+            "Drivers":"Drivers"
+        }
+    },
+    "Unattend": {
+        "Administrator": {
+            "Password": {
+                "Value":"HelloWorld123&",
+                "Plaintext":true
+            }
+        },
+        "TimeZone":"Eastern Standard Time",
+        "ProductKey":"W269N-WFGWX-YVC9B-4J6C9-T83GX"
+    }
+}
