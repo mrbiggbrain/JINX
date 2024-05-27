@@ -7,7 +7,7 @@ param (
 Write-Host "BEGIN STEP: INJECT DRIVERS" -ForegroundColor Green
 
 Write-Host "`tGetting List of Drivers"
-$Drivers = & "$PSScriptRoot\_GenerateDriverList.ps1" -DriverPath "$($Config.Path)\$($Config.Folders.Drivers)" -DiscoveredOnly:$false
+$Drivers = & "$PSScriptRoot\_GenerateDriverList.ps1" -DriverPath "$($Config.Path)\$($Config.Folders.Drivers)" -DiscoveredOnly:$true
 
 Write-Host "`t`tFound $($Drivers.Count) Drivers to Install"
 Write-Host "`tInstalling Drivers"

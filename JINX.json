@@ -1,9 +1,9 @@
 {
     "Partition": {
-        "Disk":2,
+        "Disk":0,
         "PartType":"UEFI",
         "DriveLetters":{
-            "OS":"X",
+            "OS":"C",
             "System":"S",
             "Recovery":"R"
         }
@@ -13,7 +13,7 @@
         "Index":6
     },
     "Repo": {
-        "Path":"D:\\JINXREPO",
+        "Path":"E:\\JINXREPO",
         "Folders": {
             "Images":"Images",
             "Drivers":"Drivers"

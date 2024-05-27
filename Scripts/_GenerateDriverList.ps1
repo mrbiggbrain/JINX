@@ -12,13 +12,13 @@ if(!(Test-Path $DriverPath))
 }
 
 # Get all the driver (INF) files in the provided directory. 
-$Drivers = Get-ChildItem -Recurse -Path $DriverPath -Filter *.inf
+$Drivers = Get-ChildItem -Recurse -Path $DriverPath -Filter *.inf -File
 
 # Are we only getting required drivers. 
 if($DiscoveredOnly)
 {
     # Get a listing of all of the device InstanceIDs on our system. Truncate them for better matching. 
-    $Devices = Get-PnpDevice | Select-Object -ExpandProperty InstanceID | foreach-Object {
+    $Devices = Get-CimInstance -ClassName Win32_PnPEntity | ForEach-Object {$_.HardwareID | Select-Object -First 1} | foreach-Object {
         $Parts = $_ -Split "&"
 
         if($Parts.Count -gt 1)
@@ -34,7 +34,7 @@ if($DiscoveredOnly)
     # Check all of the driver files to see if we have matches within. 
     $Results = foreach($driver in $Drivers)
     {
-        $INFDetails = Get-Content -Path $Driver.FullName -Raw
+        $INFDetails = Get-Content -Path $driver.FullName -Raw
 
         foreach($device in $Devices)
         {

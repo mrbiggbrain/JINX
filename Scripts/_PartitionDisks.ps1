@@ -32,7 +32,7 @@ catch {
     Write-Host "`t`tClearing Disk (Erasing Content)."
     try {
         # Clear the Disk
-        Clear-Disk -Number $Config.Disk -Removedata -Confirm:$false -ErrorAction SilentlyContinue
+        Clear-Disk -Number $Config.Disk -Removedata -Confirm:$false -ErrorAction SilentlyContinue -RemoveOEM
     }
     catch {
         return [PSCustomObject]@{
